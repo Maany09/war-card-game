@@ -1,13 +1,25 @@
 import random
-import pdb
 
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 
-values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
-            'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
+values = {
+    'Two': 2,
+    'Three': 3,
+    'Four': 4,
+    'Five': 5,
+    'Six': 6,
+    'Seven': 7,
+    'Eight': 8,
+    'Nine': 9,
+    'Ten': 10,
+    'Jack': 11,
+    'Queen': 12,
+    'King': 13,
+    'Ace': 14
+}
 
 
 class Card:
@@ -19,8 +31,6 @@ class Card:
 
     def __str__(self):
         return self.rank + ' of ' + self.suit
-
-two_hearts = Card(suits[0],ranks[0])
 
 # Deck class
 class Deck:
@@ -65,7 +75,7 @@ class Player:
             self.all_cards.append(mycards)
 
     def remove_one(self):
-        # it will remove the card from the top. so pop(0)
+        # Remove and return the first card from the player's hand
         try:
             return self.all_cards.pop(0)
         except IndexError:
