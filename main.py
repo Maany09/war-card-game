@@ -27,7 +27,7 @@ class Deck:
     def __init__(self):
         self.all_cards = []
 
-        # create a card object
+        # Create a Card object for every suit and rank combination
         for suit in suits:
             for rank in ranks:
 
@@ -40,7 +40,13 @@ class Deck:
 
         random.shuffle(self.all_cards)
 
-new_deck = Deck()
-new_deck.shuffle()
+    # Remove and return one card from the deck
+    def grab_one(self):
 
+        return self.all_cards.pop()
 
+my_deck = Deck()
+my_deck.shuffle()
+
+my_card = my_deck.grab_one()
+print(my_card)
