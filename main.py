@@ -20,6 +20,7 @@ class Card:
         return self.rank + ' of ' + self.suit
 
 
+
 # Deck class
 class Deck:
 
@@ -33,9 +34,13 @@ class Deck:
                 created_card = Card(suit,rank)
                 self.all_cards.append(created_card)
 
-new_deck = Deck()
 
-# To get all cards
-# for all_card in new_deck.all_cards:
-#     print(all_card)
+    # shuffle all the cards using random.shuffle()
+    def shuffle(self):
+
+        random.shuffle(self.all_cards)
+
+new_deck = Deck()
+new_deck.shuffle()
+
 
