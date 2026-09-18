@@ -1,3 +1,6 @@
+import random
+
+
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
@@ -17,6 +20,22 @@ class Card:
         return self.rank + ' of ' + self.suit
 
 
-two_hearts = Card(suits[0],ranks[0])
-four_of_spades = Card(suits[2],ranks[2])
-print(four_of_spades)
+# Deck class
+class Deck:
+
+    def __init__(self):
+        self.all_cards = []
+
+        # create a card object
+        for suit in suits:
+            for rank in ranks:
+
+                created_card = Card(suit,rank)
+                self.all_cards.append(created_card)
+
+new_deck = Deck()
+
+# To get all cards
+# for all_card in new_deck.all_cards:
+#     print(all_card)
+
